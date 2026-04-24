@@ -1,0 +1,25 @@
+schema: spec-driven
+
+context: |
+  项目名称: AITestPro AI 自动化测试平台
+  技术栈: HTML5 + CSS3 + JavaScript (原生), 后端 Python Flask
+  UI框架: 自定义组件库, Chart.js 图表, Font Awesome 图标
+  AI模型: MiniMax M2.7 (大语言模型)
+  主题: 支持明色/深色主题切换
+  版本: v3.0
+  前端架构: 单页应用 (SPA), 模块化 JS/CSS
+  后端: Python Flask + MiniMax API
+  代码规模: ~16,800行 (HTML 4064 + JS 6022 + CSS 7010)
+
+rules:
+  proposal:
+    - 每个提案必须包含需求编号引用 (如 F-GEN-001)
+    - 优先级标注 P0/P1/P2
+  tasks:
+    - 每个任务不超过 4 小时
+    - 任务需明确标注关联的功能编号
+  code_quality:
+    - 注意 app.js 与独立 JS 文件存在同名函数，避免覆盖
+    - styles.css 与 css/ 目录下存在重复样式定义，修改时统一处理
+    - 所有数据存储需从内存数组迁移到后端 API + 数据库
+    - 新增后端接口遵循 RESTful 规范

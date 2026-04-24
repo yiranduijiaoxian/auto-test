@@ -1,0 +1,399 @@
+/* ═══════════════════════════════════════════
+   通用组件样式
+   ═══════════════════════════════════════════ */
+
+/* 重置样式 */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    overflow: auto;
+}
+
+/* 链接 */
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--text-tertiary);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
+}
+
+/* 按钮基础样式 */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: var(--radius-md);
+    font-size: var(--font-sm);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    border: none;
+    outline: none;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+.btn-secondary {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+    background: var(--bg-input-alpha);
+}
+
+.btn-success {
+    background: var(--success);
+    color: white;
+}
+
+.btn-danger {
+    background: var(--danger);
+    color: white;
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: var(--font-xs);
+}
+
+.btn-lg {
+    padding: 12px 24px;
+    font-size: var(--font-lg);
+}
+
+/* 卡片 */
+.card {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    padding: var(--spacing-lg);
+}
+
+/* 表单元素 */
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.form-input,
+.form-select,
+textarea {
+    width: 100%;
+    padding: 10px 14px;
+    background: var(--bg-input-alpha);
+    border: 1px solid var(--bg-input-border-alpha);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.form-input:focus,
+.form-select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* 徽章 */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 6px;
+    background: var(--danger);
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.badge-success {
+    background: var(--success);
+}
+
+.badge-warning {
+    background: var(--warning);
+}
+
+/* 标签 */
+.tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    background: var(--primary-alpha);
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 20px;
+}
+
+.tag-success {
+    background: var(--success-alpha);
+    color: var(--success);
+}
+
+.tag-warning {
+    background: var(--warning-alpha);
+    color: var(--warning);
+}
+
+.tag-danger {
+    background: var(--danger-alpha);
+    color: var(--danger);
+}
+
+/* 开关 */
+.toggle-switch {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    background: var(--bg-input-alpha);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 1px solid var(--border);
+}
+
+.toggle-switch::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 18px;
+    height: 18px;
+    background: var(--text-secondary);
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.toggle-switch.active {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.toggle-switch.active::after {
+    left: 22px;
+    background: white;
+}
+
+/* 进度条 */
+.progress-bar {
+    height: 8px;
+    background: var(--bg-input-alpha);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: var(--primary);
+    border-radius: 4px;
+    transition: width 0.3s;
+}
+
+/* 加载动画 */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+/* 表格 */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+.table th {
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.table tbody tr:hover {
+    background: var(--bg-hover);
+}
+
+/* ═══════════════════════════════════════════
+   绿色状态点样式
+   ═══════════════════════════════════════════ */
+
+/* 导航栏 AI 助手按钮状态点 - 小 */
+.ai-nav-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.1);
+    border: none;
+    border-radius: 20px;
+    padding: 6px 14px;
+    color: #fff;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.ai-nav-badge:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.ai-nav-badge .badge-dot {
+    width: 5px;
+    height: 5px;
+    background: #4ade80;
+    border-radius: 50%;
+    animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(0.8); }
+}
+
+/* 悬浮球 */
+.ai-fab {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 8px 32px rgba(99, 102, 241, 0.4);
+    transition: all 0.3s;
+    z-index: 1000;
+}
+
+.ai-fab:hover {
+    transform: scale(1.08);
+    box-shadow: 0 12px 40px rgba(99, 102, 241, 0.5);
+}
+
+.ai-fab.open {
+    transform: rotate(45deg) scale(0.9);
+}
+
+.ai-fab .fab-icon {
+    font-size: 24px;
+    pointer-events: none;
+}
+
+        /* 悬浮球状态点 - 大 */
+        .ai-fab .fab-ping {
+            position: absolute;
+            top: 3px;
+            right: 3px;
+            width: 10px;
+            height: 10px;
+    background: #4ade80;
+    border-radius: 50%;
+    border: 1.5px solid #4f46e5;
+    animation: pulse-fab 2.5s infinite;
+}
+
+@keyframes pulse-fab {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.5); }
+    50% { box-shadow: 0 0 0 3px rgba(74, 222, 128, 0); }
+}
+
+.ai-fab-tooltip {
+    position: fixed;
+    bottom: 44px;
+    right: 100px;
+    background: var(--bg-card);
+    border: 1px solid rgba(139, 92, 246, 0.4);
+    border-radius: 10px;
+    padding: 8px 14px;
+    font-size: 13px;
+    color: var(--text-primary);
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 999;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all 0.2s;
+    box-shadow: var(--shadow-card);
+}
+
+.ai-fab:hover ~ .ai-fab-tooltip,
+.ai-fab-tooltip.show {
+    opacity: 1;
+    transform: translateX(0);
+}
